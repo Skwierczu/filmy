@@ -1,25 +1,37 @@
-import logo from './logo.svg';
+
 import './App.css';
 
 function App() {
+  //Stany przechowujace dane formularza
+  const [tytul, setTytul] = useState("");
+  const [rodzaj, setRodzaj] = useState("");
+
+  //Funkcja obsługująca przycisk "Dodaj"
+  const handleSubmit = (e) => {
+   e.preventDefault(); // Zapobiega odświeżeniu strony po kliknięciu 
+
+    //Wyświetlanie danych formularza w konsoli 
+    console.log(`Tytuł: ${tytul}, Rodzaj: ${rodzaj}`);
+  };
+  return (
+    <div className="container" style={{ padding: "20px" }}>
+
+    </div>
+  )
+}
+function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <form>
+        <div class="mb-3">
+          <label for="film" class="form-label">tytuł filmu</label>
+        <input type="text" class="form-cotrol" id="film" />
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
     </div>
   );
 }
 
 export default App;
+
